@@ -1,5 +1,15 @@
-number = int(input("Введите десятичное число: "))
-bin2 = bin(number)
-oct8 = oct(number)
-print("В двоичной системе счисления: ",bin2[2::])
-print("В восмеричной системе счисления: ",oct8[2::])
+def convert_number():
+    while True:
+        try:
+            decimal = int(input("Введите десятичное число: "))
+            break
+        except ValueError:
+            print("Ошибка: Пожалуйста, введите целое число.")
+
+    binary = bin(decimal)[2:]
+    octal = oct(decimal)[2:]
+
+    print(f"Двоичное представление: {binary}")
+    print(f"Восьмеричное представление: {octal}")
+
+convert_number()
